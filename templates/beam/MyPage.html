@@ -1,12 +1,16 @@
 {% extends "global/Page.html" %}
 {% load staticfiles otree %}
 
-{% block title %}
-    Page title
+{% block scripts %}
+    <link
+        rel="import"
+        href="{% static "/webcomponents/beam/player-matrix.html" %}">
+
 {% endblock %}
 
 {% block content %}
 
-    {% next_button %}
+    <player-matrix>
+    </player-matrix>
 
 {% endblock %}

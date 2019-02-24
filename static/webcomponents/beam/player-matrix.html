@@ -1,0 +1,52 @@
+<link
+    rel="import"
+    href="/static/bower_components/polymer/polymer.html" />
+
+<link
+    rel="import"
+    href="/static/webcomponents/beam/player-matrix-cell.html" />
+
+<dom-module id="player-matrix">
+    <template>
+        <style>
+            #cell {
+                border: 2px solid black;
+            }
+        </style>
+        <table>
+            <tr>
+                <td id="cell">
+                    <player-matrix-cell>
+                    </player-matrix-cell>
+                </td>
+                <td id="cell">
+                    <player-matrix-cell>
+                    </player-matrix-cell>
+                </td>
+            </tr>
+            <tr>
+                <td id="cell">
+                    <player-matrix-cell>
+                    </player-matrix-cell>
+                </td>
+                <td id="cell">
+                    <player-matrix-cell>
+                    </player-matrix-cell>
+                </td>
+            </tr>
+        </table>
+
+    </template>
+    <script>
+        Polymer({
+            is: 'player-matrix',
+            properties: {
+
+            },
+            ready() {
+                console.log("matrix loaded");
+            },
+        });
+    </script>
+
+</dom-module>

@@ -1,0 +1,61 @@
+<link
+    rel="import"
+    href="/static/bower_components/polymer/polymer.html" />
+
+<dom-module id="player-matrix-cell">
+    <template>
+        <style>
+            #cell {
+                border: 1px solid black;
+            }
+        </style>
+        <table>
+            <tr>
+                <td id="cell">{{surplus}}</td>
+                <td id="cell">{{B_value}}</td>
+            </tr>
+            <tr>
+                <td id="cell">{{A_value}}</td>
+                <td id="cell">
+                    <button
+                        id="ChoiceButton"
+                        type="button"
+                        on-tap="_onClick"> 
+                        {{button_text}}
+                    </button>
+                </td>
+            </tr>
+        </table>
+
+    </template>
+    <script>
+        Polymer({
+            is: 'player-matrix-cell',
+            properties: {
+                surplus: {
+                    type: Number,
+                    value: 0
+                },
+                A_value: {
+                    type: Number,
+                    value: 0
+                },
+                B_value: {
+                    type: Number,
+                    value: 0
+                },
+                button_text: {
+                    type: String,
+                    value: "confirm"
+                },
+            },
+            ready() {
+                console.log("matrix loaded");
+            },
+            _onClick() {
+                console.log("confirmation test");
+            }
+        });
+    </script>
+
+</dom-module>
