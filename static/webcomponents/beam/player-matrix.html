@@ -13,15 +13,18 @@
                 border: 2px solid black;
             }
         </style>
+
+        <!--
+        <div>
         <table>
-           
+
             <tr>
-                <th> </th> <!-- empty column to get syntax !-->
-                <th> B1 </th> <!-- columns !-->
+                <th> </th>
+                <th> B1 </th>
                 <th> B2 </th>
                 <th> B3 </th>
             </tr>
-            <tr> <!-- adds another column !-->
+            <tr>
                 <td> A1 </td>
                 <td id="cell">
                     <player-matrix-cell>
@@ -31,7 +34,7 @@
                     <player-matrix-cell>
                     </player-matrix-cell>
                 </td>
-                 <td id="cell"> <!-- adds another row !-->
+                 <td id="cell">
                     <player-matrix-cell>
                     </player-matrix-cell>
                 </td>
@@ -47,7 +50,7 @@
                     <player-matrix-cell>
                     </player-matrix-cell>
                 </td>
-                 <td id="cell"> 
+                 <td id="cell">
                     <player-matrix-cell>
                     </player-matrix-cell>
                 </td>
@@ -63,22 +66,32 @@
                     <player-matrix-cell>
                     </player-matrix-cell>
                 </td>
-                 <td id="cell"> 
+                 <td id="cell">
                     <player-matrix-cell>
                     </player-matrix-cell>
                 </td>
             </tr>
         </table>
+    </div> -->
 
+        <div id="outer" class="parent" style="text-align:center;">
+        </div>
     </template>
     <script>
         Polymer({
             is: 'player-matrix',
             properties: {
-
+                numCells: {
+                    type: Number,
+                    value: 3,
+                },
             },
             ready() {
                 console.log("matrix loaded");
+                for(let i = 0; i < this.numCells; i++) {
+                    let cell = document.createElement("player-matrix-cell");
+                    this.$.outer.appendChild(cell);
+                }
             },
         });
     </script>
